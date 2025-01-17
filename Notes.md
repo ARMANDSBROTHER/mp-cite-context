@@ -14,6 +14,8 @@ Api = Application Programming Interface (computer to computer call and response)
 
 Doi is the publication catalogue
 
+Curly brakets is object
+
 ---
 
 ## Working Notes
