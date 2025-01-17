@@ -2,7 +2,7 @@
 
 ## Goals
 
-to program a hover over display for references to show context further than date and name.
+to program a hover over display for references to show context with citations further than date and name.
 
 ### Extra goals
 
