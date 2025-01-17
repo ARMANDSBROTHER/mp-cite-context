@@ -1,18 +1,24 @@
 # Notes
 
+## Goals
+
+to program a hover over display for references to show context further than date and name.
+
+### Extra goals
+
+display chart of distribution of reference dates for publication
+
 ## DOI (Digital Obj Id) API
-
-API Endpoint:
-
-https://doi.org/api/handles/<doiName>?<param_1>&<param_2>
 
 Api = Application Programming Interface (computer to computer call and response)
 
-public Api
+Doi is the publication catalogue
 
 ---
 
-API that works:
+## Working Notes
+
+API Endpoint that works:
 
 URL: https://dx.doi.org/10.1210/jc.2017-01658
 
@@ -25,6 +31,8 @@ Headers :
 ```
 
 ---
+
+Relevant fields within example response:
 
 ```jsonc
 {
@@ -64,5 +72,3 @@ Headers :
   }
 }
 ```
-
-Idea: Show chart of references dates
