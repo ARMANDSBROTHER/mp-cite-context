@@ -1,0 +1,11 @@
+{
+  "name": "mp-cite-context",
+  "version": "1.0.0",
+  "description": "nah I'm alright mate, got it in my noggin",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node --experimental-strip-types index.ts"
+  },
+  "author": "ARMANDSBROTHER",
+  "license": "MIT"
+}
