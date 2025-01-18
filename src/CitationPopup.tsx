@@ -1,6 +1,15 @@
+import { fetchRelevantDoiInfo } from "./fetchRelevantDoiInfo";
+
 type CitationPopupProps = {
   url: string;
 };
-export function CitationPopup(props: CitationPopupProps) {
-  return <p>{props.url}</p>;
+export async function CitationPopup(props: CitationPopupProps) {
+  const info = await fetchRelevantDoiInfo(props.url);
+
+  return (
+    <p>
+      {info.citationsCount} {info.publishedYearOnline} {info.publisher}{" "}
+      {info.title}
+    </p>
+  );
 }
