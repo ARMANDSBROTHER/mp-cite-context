@@ -10,7 +10,7 @@ export function CitationPopup(props: CitationPopupProps) {
   // useEffect, makes the function only be called when the url changes or on first load
   useEffect(() => {
     fetchRelevantDoiInfo(props.url).then((relevantContext) =>
-      setInfo(relevantContext)
+      setInfo(relevantContext),
     );
   }, [props.url]);
 
@@ -19,9 +19,18 @@ export function CitationPopup(props: CitationPopupProps) {
   }
 
   return (
-    <p>
-      {info.citationsCount} {info.publishedYearOnline} {info.publisher}{" "}
-      {info.title}
-    </p>
+    <div
+      style={{
+        border: "1px solid currentColor",
+        borderRadius: "5px",
+        padding: "10px",
+      }}
+    >
+      <div>{info.title}</div>
+      <div>
+        Published in {info.publishedYearOnline} by {info.publisher}
+      </div>
+      <div>{info.citationsCount} citations</div>
+    </div>
   );
 }
