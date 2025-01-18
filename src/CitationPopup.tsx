@@ -1,10 +1,19 @@
-import { fetchRelevantDoiInfo } from "./fetchRelevantDoiInfo";
+import { useState } from "react";
+import { fetchRelevantDoiInfo, RelevantContext } from "./fetchRelevantDoiInfo";
 
 type CitationPopupProps = {
   url: string;
 };
-export async function CitationPopup(props: CitationPopupProps) {
-  const info = await fetchRelevantDoiInfo(props.url);
+export function CitationPopup(props: CitationPopupProps) {
+  const [info, setInfo] = useState<RelevantContext>();
+
+  fetchRelevantDoiInfo(props.url).then((relevantContext) =>
+    setInfo(relevantContext)
+  );
+
+  if (info === undefined) {
+    return <p>...</p>;
+  }
 
   return (
     <p>

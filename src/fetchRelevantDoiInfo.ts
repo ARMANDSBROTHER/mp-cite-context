@@ -9,7 +9,16 @@ type DoiResponse = {
   };
 };
 
-export async function fetchRelevantDoiInfo(url: string) {
+export type RelevantContext = {
+  publisher: string;
+  title: string;
+  citationsCount: number;
+  publishedYearOnline: number;
+};
+
+export async function fetchRelevantDoiInfo(
+  url: string
+): Promise<RelevantContext> {
   const response = await fetch(url, {
     headers: {
       Accept: "application/json",
