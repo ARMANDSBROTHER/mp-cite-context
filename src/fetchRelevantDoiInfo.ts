@@ -9,21 +9,21 @@ type DoiResponse = {
   };
 };
 
-const response = await fetch("https://dx.doi.org/10.1210/jc.2017-01658", {
-  headers: {
-    Accept: "application/json",
-  },
-});
+export async function fetchRelevantDoiInfo(url: string) {
+  const response = await fetch(url, {
+    headers: {
+      Accept: "application/json",
+    },
+  });
 
-const responseJson: DoiResponse = await response.json();
+  const responseJson: DoiResponse = await response.json();
 
-const relevantContext = {
-  publisher: responseJson.publisher,
-  title: responseJson.title,
-  citationsCount: responseJson["is-referenced-by-count"],
-  publishedYearOnline: responseJson["published-online"]["date-parts"][0][0],
-};
+  const relevantContext = {
+    publisher: responseJson.publisher,
+    title: responseJson.title,
+    citationsCount: responseJson["is-referenced-by-count"],
+    publishedYearOnline: responseJson["published-online"]["date-parts"][0][0],
+  };
 
-console.log(relevantContext);
-
-export {};
+  return relevantContext;
+}
