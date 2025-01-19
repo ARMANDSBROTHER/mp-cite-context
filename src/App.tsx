@@ -6,10 +6,12 @@ function App() {
       <h1>Citation test app</h1>
       <p>
         This is a DOI link:{" "}
-        <a href="https://dx.doi.org/10.1210/jc.2017-01658">
-          Hembree et al., 2017
-        </a>
-        <CitationPopup url={"https://dx.doi.org/10.1210/jc.2017-01658"} />
+        <CitationPopup url={"https://dx.doi.org/10.1210/jc.2017-01658"}>
+          <a href="https://dx.doi.org/10.1210/jc.2017-01658">
+            Hembree et al., 2017
+          </a>
+        </CitationPopup>
+        Text
       </p>
     </>
   );
