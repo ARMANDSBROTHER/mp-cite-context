@@ -22,8 +22,10 @@ export function CitationPopup(props: CitationPopupProps) {
     <div
       style={{
         border: "1px solid currentColor",
+        backgroundColor: "rgb(215, 239, 255)",
         borderRadius: "5px",
         padding: "10px",
+        boxShadow: "10px 10px 6px rgba(0, 0, 0, 0.2)",
       }}
     >
       <div
