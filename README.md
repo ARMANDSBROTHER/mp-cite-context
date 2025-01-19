@@ -1,14 +1,14 @@
 ## Goals
 
-to program a hover over display for references to show context further than date and name.
+To program a hover over display for references to show context further than date and name. Specifically indicators of study reliability (good/ relevant journal, Full relevent title, cited by other researchers)
 
-### Extra goals
+### Side quest
 
-display chart of distribution of reference dates for publication
+display chart of distribution of reference dates for publication? (this can be a way to hide old debunked evidence, by hiding it behind a 'recent' study)
 
 ## Working Notes
 
-API Endpoint that works:
+### API Endpoint that works:
 
 URL: https://dx.doi.org/10.1210/jc.2017-01658
 
@@ -39,26 +39,30 @@ Relevant fields within example response:
       "given": "Wylie C",
       "family": "Hembree",
       "sequence": "first",
-      "affiliation": []
-    }
+      "affiliation": [],
+    },
   ],
   "is-referenced-by-count": 1559,
   "published-print": {
-    "date-parts": [[2017, 11, 1]]
+    "date-parts": [[2017, 11, 1]],
   },
-  "reference": [
-    {
-      "DOI": "10.1136/bmj.328.7454.1490",
-      "article-title": "Grading quality of evidence and strength of recommendations",
-      "author": "GRADE Working Group",
-      "year": "2004",
-      "journal-title": "BMJ"
-    }
-  ],
   "resource": {
     "primary": {
-      "URL": "http://academic.oup.com/jcem/article/102/11/3869/4157558"
-    }
-  }
+      "URL": "http://academic.oup.com/jcem/article/102/11/3869/4157558",
+    },
+  },
 }
 ```
+
+### Implemented Features
+
+- DOI API calling function to relevant tags
+- Component that can fetch and show DOI information
+- React [hook]](https://knowyourmeme.com/memes/man-door-hand-hook-car-door) wrapper for API call Function
+
+### Missing Features
+
+- no floating functionality
+- no hover / focus effect
+- Not usable on mobile (button could be injected into page, next to links, to suppliment function)
+- browser extension?
